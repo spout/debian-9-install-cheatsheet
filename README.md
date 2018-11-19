@@ -204,3 +204,13 @@ sudo apt install curl
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo python get-pip.py
 ```
+
+## Pipenv
+```bash
+pip install --user pipenv
+
+nano ~/.profile
+export PATH="$PATH:~/.local/bin"
+
+source ~/.profile
+```
