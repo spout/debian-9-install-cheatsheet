@@ -457,3 +457,11 @@ GRANT ALL ON SCHEMA public TO public;
 # Restore backup
 psql -d database_name -U spout -f backup.sql
 ```
+
+## GeoIP
+```bash
+sudo apt install geoip-bin geoip-database
+cd /usr/share/GeoIP
+sudo wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+sudo gunzip GeoLiteCity.dat.gz
+```
