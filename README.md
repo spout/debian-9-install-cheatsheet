@@ -122,3 +122,38 @@ mysql -u root -p
 ```bash
 sudo apt install php7.2-fpm php7.2-gd php7.2-mysql php7.2-pgsql php7.2-sqlite3 php7.2-mbstring php7.2-xml php7.2-intl
 ```
+
+## nginx
+```bash
+sudo apt install nginx
+
+sudo nano /etc/nginx/sites-available/default
+
+root /var/www;
+index index.php index.html index.htm
+
+# Uncomment location ~\.php$ {
+# Uncomment include snippets/fastcgi-php.conf;
+# Uncomment and change (PHP7) fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+
+sudo service nginx reload
+
+sudo chown www-data:www-data /var/www
+sudo chmod g+w /var/www
+
+# Gzip
+sudo nano /etc/nginx/nginx.conf
+# Uncomment:
+gzip_vary on;
+gzip_proxied any;
+gzip_comp_level 6;
+gzip_buffers 16 8k;
+gzip_http_version 1.1;
+gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+
+sudo nano /etc/nginx/nginx.conf
+# Uncomment:
+server_tokens off;
+
+sudo service nginx reload
+```
