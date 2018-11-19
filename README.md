@@ -477,6 +477,14 @@ sudo wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 sudo gunzip GeoLiteCity.dat.gz
 ```
 
+## GeoLite2
+```bash
+cd /usr/share/GeoIP
+sudo wget http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz
+sudo tar -xvzf GeoLite2-City.tar.gz
+sudo mv GeoLite2-City_20181113/GeoLite2-City.mmdb .
+```
+
 ## Backup-Manager
 https://documentation.online.net/fr/dedicated-server/tutorials/backup/configure-backup/start
 
