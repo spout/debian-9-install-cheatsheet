@@ -322,3 +322,10 @@ sudo ufw allow 10011/tcp
 ```bash
 sudo apt install mc
 ```
+
+# www-data
+```bash
+sudo usermod -g www-data spout
+sudo chown www-data:www-data /var/www
+sudo chmod g+w /var/www
+```
