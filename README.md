@@ -385,6 +385,12 @@ sudo apt install supervisor
 ```
 
 ## Python libs
+
+## Dev
+```bash
+sudo apt install python-dev
+```
+
 ### MySQL
 ```bash
 sudo apt install default-libmysqlclient-dev
