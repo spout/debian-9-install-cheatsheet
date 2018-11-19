@@ -193,3 +193,8 @@ wget -O /var/www/adminer.php https://www.adminer.org/latest.php
 sudo chmod +x /usr/bin/adminer-update
 sudo adminer-update
 ```
+
+## CURL
+```bash
+sudo apt install curl
+```
