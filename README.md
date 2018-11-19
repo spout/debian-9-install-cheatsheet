@@ -14,3 +14,9 @@ adduser spout sudo
 sudo apt update
 sudo apt upgrade
 ```
+
+## byobu
+```bash
+sudo apt install byobu
+byobu
+```
