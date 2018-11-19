@@ -167,3 +167,8 @@ sudo dpkg-reconfigure locales
 
 locale -a
 ```
+
+## Gettext
+```bash
+sudo apt install gettext
+```
