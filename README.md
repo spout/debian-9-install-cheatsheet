@@ -425,6 +425,35 @@ deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update
-sudo apt install postgresql-11
-sudo apt install postgresql-11-postgis-2.5
+sudo apt install postgresql-11 postgresql-11-postgis-2.5
+
+sudo nano /etc/postgresql/11/main/pg_hba.conf
+local   all         all                               trust     # replace peer with trust
+
+sudo service postgresql restart
+
+psql -U postgres
+ALTER USER postgres with password 'secret';
+exit;
+
+sudo nano /etc/postgresql/11/main/pg_hba.conf
+local   all         postgres                          md5       # replace trust with md5
+
+sudo service postgresql restart
+
+# Create user
+sudo su - postgres
+createuser -s spout -P
+
+# Create DB
+createdb test_db
+
+# Drop all tables
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO public;
+
+# Restore backup
+psql -d database_name -U spout -f backup.sql
 ```
