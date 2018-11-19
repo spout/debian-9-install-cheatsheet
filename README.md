@@ -521,3 +521,6 @@ sudo /usr/local/sbin/backup-manager
 sudo ln -s /usr/local/bin/backup-manager-purge /usr/bin/backup-manager-purge
 
 ```
+
+## netdata
+https://github.com/firehol/netdata/wiki/Installation
