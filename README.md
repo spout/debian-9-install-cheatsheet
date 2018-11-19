@@ -389,6 +389,7 @@ sudo apt install supervisor
 ## Dev
 ```bash
 sudo apt install python-dev
+sudo apt install python3-dev
 ```
 
 ### MySQL
