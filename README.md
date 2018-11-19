@@ -214,3 +214,8 @@ export PATH="$PATH:~/.local/bin"
 
 source ~/.profile
 ```
+
+## ZIP
+```bash
+sudo apt install zip unzip
+```
