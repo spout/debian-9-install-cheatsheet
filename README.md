@@ -219,3 +219,8 @@ source ~/.profile
 ```bash
 sudo apt install zip unzip
 ```
+
+## Git
+```bash
+sudo apt install git
+```
