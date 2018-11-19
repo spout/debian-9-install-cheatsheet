@@ -416,3 +416,15 @@ sudo apt install libxml2-dev libxslt1-dev
 ```bash
 sudo apt install libffi-dev
 ```
+
+## PostgreSQL
+```bash
+sudo nano /etc/apt/sources.list.d/pgdg.list
+
+deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main
+
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt update
+sudo apt install postgresql-11
+sudo apt install postgresql-11-postgis-2.5
+```
