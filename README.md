@@ -215,6 +215,17 @@ export PATH="$PATH:~/.local/bin"
 source ~/.profile
 ```
 
+## pyenv
+```bash
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
+nano ~/.bashrc
+
+export PATH="/home/spout/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
 ## ZIP
 ```bash
 sudo apt install zip unzip
