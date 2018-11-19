@@ -198,3 +198,9 @@ sudo adminer-update
 ```bash
 sudo apt install curl
 ```
+
+## pip
+```bash
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo python get-pip.py
+```
