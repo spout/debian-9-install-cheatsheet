@@ -476,3 +476,48 @@ cd /usr/share/GeoIP
 sudo wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 sudo gunzip GeoLiteCity.dat.gz
 ```
+
+## Backup-Manager
+https://documentation.online.net/fr/dedicated-server/tutorials/backup/configure-backup/start
+
+```bash
+wget https://github.com/sukria/Backup-Manager/archive/master.zip -O backup-manager.zip
+unzip backup-manager.zip
+cd Backup-Manager-master/
+sudo make install
+sudo cp /usr/local/share/backup-manager/backup-manager.conf.tpl /etc/backup-manager.conf
+
+sudo nano /etc/backup-manager.conf
+
+export BM_ARCHIVE_METHOD="tarball mysql pgsql"
+
+BM_TARBALL_TARGETS[2]="/home"
+BM_TARBALL_TARGETS[3]="/var/www"
+
+export BM_MYSQL_ADMINPASS="secret"
+export BM_MYSQL_DBEXCLUDE="information_schema mysql performance_schema"
+
+export BM_PGSQL_ADMINLOGIN="postgres"
+export BM_PGSQL_ADMINPASS="secret"
+
+export BM_UPLOAD_METHOD="ftp"
+
+export BM_UPLOAD_FTP_USER="secret"
+export BM_UPLOAD_FTP_PASSWORD="secret"
+export BM_UPLOAD_FTP_HOSTS="secret"
+export BM_UPLOAD_FTP_DESTINATION="/"
+
+sudo nano /etc/cron.daily/backup-manager
+
+#!/bin/sh
+test -x /usr/local/sbin/backup-manager || exit 0
+/usr/local/sbin/backup-manager
+
+sudo chmod +x /etc/cron.daily/backup-manager
+
+sudo /usr/local/sbin/backup-manager
+
+# Fix /usr/bin/backup-manager-purge not found
+sudo ln -s /usr/local/bin/backup-manager-purge /usr/bin/backup-manager-purge
+
+```
