@@ -117,3 +117,8 @@ EXIT;
 ```bash
 mysql -u root -p
 ```
+
+## PHP
+```bash
+sudo apt install php7.2-fpm php7.2-gd php7.2-mysql php7.2-pgsql php7.2-sqlite3 php7.2-mbstring php7.2-xml php7.2-intl
+```
