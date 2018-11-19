@@ -311,3 +311,9 @@ sudo update-rc.d teamspeak defaults
 
 sudo service teamspeak start
 ```
+
+```bash
+sudo ufw allow 9987/udp
+sudo ufw allow 30033/tcp
+sudo ufw allow 10011/tcp
+```
