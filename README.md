@@ -224,3 +224,13 @@ sudo apt install zip unzip
 ```bash
 sudo apt install git
 ```
+
+## OptiPNG
+```bash
+wget http://downloads.sourceforge.net/project/optipng/OptiPNG/optipng-0.7.7/optipng-0.7.7.tar.gz
+tar -xvzf optipng-0.7.7.tar.gz
+cd optipng-0.7.7
+./configure
+make
+sudo make install
+```
