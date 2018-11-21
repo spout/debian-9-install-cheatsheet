@@ -617,3 +617,8 @@ sudo apt install sendmail
 
 ## netdata
 https://github.com/netdata/netdata/tree/master/installer#installation
+
+## NCurses Disk Usage
+```bash
+sudo apt install ncdu
+```
