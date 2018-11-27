@@ -585,3 +585,9 @@ https://github.com/netdata/netdata/tree/master/installer#installation
 ```bash
 sudo apt install ncdu
 ```
+
+## Node.js
+```bash
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
