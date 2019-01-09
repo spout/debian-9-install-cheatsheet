@@ -53,6 +53,21 @@ sudo ufw enable
 sudo ufw status
 ```
 
+### ufw port forwarding
+```
+sudo ufw allow 7022/tcp
+
+nano /etc/default/ufw
+DEFAULT_FORWARD_POLICY="ACCEPT"
+
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 7022 -j REDIRECT --to-port 10022
+COMMIT
+
+sudo ufw enable
+```
+
 ## fail2ban
 ```bash
 sudo apt install fail2ban
