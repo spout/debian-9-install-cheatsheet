@@ -24,7 +24,7 @@ byobu
 ## SSH
 ```bash
 sudo nano /etc/ssh/sshd_config
-Port 10022
+Port 7022
 
 sudo service ssh restart
 ```
@@ -45,7 +45,7 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 # ufw allow ssh
-sudo ufw allow 10022
+sudo ufw allow 7022/tcp
 sudo ufw allow http
 
 sudo ufw show added
@@ -55,7 +55,7 @@ sudo ufw status
 
 ### ufw port forwarding
 ```
-sudo ufw allow 7022/tcp
+sudo ufw allow 10022/tcp
 
 nano /etc/default/ufw
 DEFAULT_FORWARD_POLICY="ACCEPT"
@@ -63,7 +63,7 @@ DEFAULT_FORWARD_POLICY="ACCEPT"
 nano/etc/ufw/before.rules
 *nat
 :PREROUTING ACCEPT [0:0]
--A PREROUTING -p tcp --dport 7022 -j REDIRECT --to-port 10022
+-A PREROUTING -p tcp --dport 10022 -j REDIRECT --to-port 7022
 COMMIT
 
 sudo ufw enable
