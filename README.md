@@ -595,7 +595,7 @@ sudo apt install sendmail
 ```
 
 ## netdata
-https://github.com/netdata/netdata/tree/master/installer#installation
+https://docs.netdata.cloud/packaging/installer/#one-line-installation
 
 ## NCurses Disk Usage
 ```bash
